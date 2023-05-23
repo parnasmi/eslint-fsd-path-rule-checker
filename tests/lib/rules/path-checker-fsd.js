@@ -1,5 +1,5 @@
 /**
- * @fileoverview check import paths according to fsd architecture
+ * @fileoverview Inside the same slice all paths should be relative
  * @author Ilhom
  */
 "use strict";
