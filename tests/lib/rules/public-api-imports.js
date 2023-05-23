@@ -1,6 +1,6 @@
 /**
  * @fileoverview The module should not allow to import module directly from file. Modules can be imported only from public api
- * @author ilhom
+ * @author Ilhom
  */
 "use strict";
 
@@ -37,7 +37,7 @@ ruleTester.run("public-api-imports", rule, {
     },
     {
       filename:
-        "C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\file.test.ts",
+        "C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\file.test.ts",
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing'",
       errors: [],
       options: [
@@ -53,7 +53,7 @@ ruleTester.run("public-api-imports", rule, {
     },
     {
       filename:
-        "C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\StoreDecorator.tsx",
+        "C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\StoreDecorator.tsx",
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing'",
       errors: [],
       options: [
@@ -77,7 +77,7 @@ ruleTester.run("public-api-imports", rule, {
     },
     {
       filename:
-        "C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\StoreDecorator.tsx",
+        "C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\StoreDecorator.tsx",
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing/file.tsx'",
       errors: [
         {
@@ -97,7 +97,7 @@ ruleTester.run("public-api-imports", rule, {
     },
     {
       filename:
-        "C:\\Users\\tim\\Desktop\\javascript\\production_project\\src\\entities\\forbidden.ts",
+        "C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\forbidden.ts",
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing'",
       errors: [
         {
