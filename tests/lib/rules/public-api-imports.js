@@ -72,49 +72,29 @@ ruleTester.run("public-api-imports", rule, {
   invalid: [
     {
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/model/file.ts'",
-      errors: [{ message: 'Absolute imports are only allowed from Public API(index.ts)'}],
+      errors: [{messageId: 'PUBLIC_ERROR'}],
       options: aliasOptions,
+      output: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article'",
     },
     {
-      filename:
-        "C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\StoreDecorator.tsx",
+      filename: 'C:\\Users\\Alina_Schneider\\Desktop\\javascript\\production_project\\src\\entities\\StoreDecorator.tsx',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing/file.tsx'",
-      errors: [
-        {
-          message: "Absolute imports are only allowed from Public API(index.ts)",
-        },
-      ],
-      options: [
-        {
-          alias: "@",
-          testFilesPatterns: [
-            "**/*.test.ts",
-            "**/*.stories.ts",
-            "**/StoreDecorator.tsx",
-          ],
-        },
-      ],
+      errors: [{messageId: 'PUBLIC_ERROR'}],
+      output: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article'",
+      options: [{
+      alias: '@',
+      testFilesPatterns: ['**/*.testing.ts', '**/*.test.ts', '**/*.stories.ts', '**/StoreDecorator.tsx']
+      }]
     },
     {
-      filename:
-        "C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\forbidden.ts",
+      filename: 'C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\forbidden.ts',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/testing'",
-      errors: [
-        {
-          message:
-            "Test data should be imported from publicApi/testing.ts only in testing and storybook files",
-        },
-      ],
-      options: [
-        {
-          alias: "@",
-          testFilesPatterns: [
-            "**/*.test.ts",
-            "**/*.stories.ts",
-            "**/StoreDecorator.tsx",
-          ],
-        },
-      ],
-    },
+      errors: [{messageId: 'TESTING_PUBLIC_ERROR'}],
+      output: null,
+      options: [{
+      alias: '@',
+      testFilesPatterns: ['**/*.testing.ts', '**/*.test.ts', '**/*.stories.ts', '**/StoreDecorator.tsx']
+      }],
+    }
   ],
 });
