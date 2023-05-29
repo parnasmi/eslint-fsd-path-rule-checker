@@ -1,4 +1,4 @@
-# Inside the same slice all paths should be relative (`fsd-import-linter/path-checker-fsd`)
+# Withing a slice all paths should be relative (`fsd-import-linter/path-checker-fsd`)
 
 <!-- end auto-generated rule header -->
 
@@ -16,7 +16,7 @@ Examples of **incorrect** code for this rule:
     filename:
       "C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\Article",
     code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/model/slices/addCommentFormSlice'",
-    errors: [{ message: "Inside the same slice all paths should be relative" }],
+    errors: [{ message: "Withing a slice all paths should be relative" }],
     options: [
       {
         alias: "@",
@@ -27,7 +27,7 @@ Examples of **incorrect** code for this rule:
     filename:
       "C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\Article",
     code: "import { addCommentFormActions, addCommentFormReducer } from 'entities/Article/model/slices/addCommentFormSlice'",
-    errors: [{ message: "Inside the same slice all paths should be relative" }],
+    errors: [{ message: "Withing a slice all paths should be relative" }],
   },
 ];
 ```

@@ -1,5 +1,5 @@
 /**
- * @fileoverview Inside the same slice all paths should be relative
+ * @fileoverview Withing a slice all paths should be relative
  * @author Ilhom
  */
 "use strict";
@@ -30,19 +30,23 @@ ruleTester.run("path-checker", rule, {
 
   invalid: [
     {
-      filename: 'C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\Article',
+      filename: 'C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\Article\\file.tsx',
       code: "import { addCommentFormActions, addCommentFormReducer } from '@/entities/Article/model/slices/addCommentFormSlice'",
-      errors: [{ message: "Inside the same slice all paths should be relative"}],
+      errors: [{ message: "Withing a slice all paths should be relative"}],
       options: [
         {
           alias: '@'
         }
-      ]
+      ],
+      output:
+        "import { addCommentFormActions, addCommentFormReducer } from './model/slices/addCommentFormSlice'",
     },
     {
-      filename: 'C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\Article',
+      filename: 'C:\\Users\\user\\Desktop\\javascript\\test_project\\src\\entities\\Article\\file.tsx',
       code: "import { addCommentFormActions, addCommentFormReducer } from 'entities/Article/model/slices/addCommentFormSlice'",
-      errors: [{ message: "Inside the same slice all paths should be relative"}],
+      errors: [{ message: "Withing a slice all paths should be relative"}],
+      output:
+        "import { addCommentFormActions, addCommentFormReducer } from './model/slices/addCommentFormSlice'",
     },
   ],
 });

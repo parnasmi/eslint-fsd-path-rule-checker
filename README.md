@@ -65,7 +65,7 @@ Then configure the rules you want to use under the rules section.
 | Name                                                   | Description                                                                                                                                    |
 | :----------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------- |
 | [fsd-layer-imports](docs/rules/fsd-layer-imports.md)   | Underlying layer modules should not use overlying layer modules. There is ignore options for some files such as StoreProvider or testing files |
-| [path-checker-fsd](docs/rules/path-checker-fsd.md)     | Inside the same slice all paths should be relative                                                                                             |
+| [path-checker-fsd](docs/rules/path-checker-fsd.md)     | Withing a slice all paths should be relative                                                                                                   |
 | [public-api-imports](docs/rules/public-api-imports.md) | The plugin should not allow to import module directly from file. Modules can be imported only from public api                                  |
 
 <!-- end auto-generated rules list -->
